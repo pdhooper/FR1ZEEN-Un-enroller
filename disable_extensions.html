@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disable Managed Extensions</title>
+</head>
+<body>
+  <h1>Disable Managed Extensions</h1>
+  <button id="disableBtn">Disable Managed Extensions</button>
+
+  <script>
+    document.getElementById('disableBtn').addEventListener('click', async () => {
+      const extensions = await chrome.management.getAll();
+      extensions.forEach(async (extension) => {
+        if (extension.isManaged && !extension.isApp && !extension.isSystem) {
+          await chrome.management.setEnabled(extension.id, false);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
