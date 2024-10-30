@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sh1mmer129 USB GUI - Unenroll Managed Chromebook</title>
+</head>
+<body>
+  <h1>Sh1mmer129 USB GUI - Unenroll Managed Chromebook</h1>
+  <p>Click the button below to unenroll this Chromebook from its current organization.</p>
+  <p><strong>Warning:</strong> Unenrolling a device will remove it from the organization's management, and all data associated with the organization will be deleted.</p>
+  <button id="unenrollBtn">Unenroll this Chromebook</button>
+
+  <script>
+    document.getElementById('unenrollBtn').addEventListener('click', () => {
+      window.location.href = 'chrome://policy/?showPolicy=true&policy=%7B%22name%22:%22UnenrollDevice%22,%22value%22:%22true%22%7D';
+    });
+  </script>
+</body>
+</html>
