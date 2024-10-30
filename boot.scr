@@ -1,0 +1,3 @@
+#!/bin/sh
+setenv bootargs "console=ttyS0,115200n8 root=/dev/sda2 ro rootfstype=ext4 rootwait"
+bootm ${loadaddr} ${ramdiskaddr}
